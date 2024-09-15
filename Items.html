@@ -1,0 +1,23 @@
+<body onload="readParams()">
+
+<p id="demo"></p>
+
+<script>
+
+    //var queryString = require('querystring');
+
+    function readParams() {
+    let text = "";
+    //const queryString = window.location.search;  // for Get method
+    const queryString = req.UrlParams;  // for Get method
+    console.log(queryString);
+
+    const urlParams = new URLSearchParams(queryString);
+    const name = urlParams.get('Name')
+    const email = urlParams.get('EMail')
+    const zipcode = urlParams.get('Zip')
+    const country = urlParams.get('Country')
+
+    document.getElementById("demo").innerHTML = `Name: ${name},  Email: ${email},  Zip: ${zipcode},  Country: ${country}  `;
+}
+</script>
